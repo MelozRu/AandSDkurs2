@@ -100,7 +100,19 @@ istream& operator>>(istream& istr, TSet& s) // ввод
 
 ostream& operator<<(ostream& ostr, const TSet& s) // вывод
 {
-    cout << "Мощность множества " << s.MaxPower << endl;
-        cout << s.BitField;
-    return ostr;
+  cout << "{ ";
+  int n, m;
+  int tmp = s.GetMaxPower();
+  for (m = 0; m <= s.GetMaxPower() - 1; m++)
+    if (s.IsMember(m))
+    {
+      cout << " ";
+      cout << m;
+      if (m <= tmp)  cout << ",";
+    }
+  cout << '\b';
+  cout << " ";
+  cout << "}" << endl;
+  cout << endl;
+  return ostr;
 }
