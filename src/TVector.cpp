@@ -30,7 +30,7 @@ TVector<ValType>::~TVector() {
 
 template <class ValType>
 ValType& TVector<ValType>::GetValue(int pos) {
-  if (pos < 0)  // защита от выхода из диапазона
+  if (pos < 0) 
     throw logic_error("Input error: index cannot be negative value.");
   if (startIndex > pos)
     throw out_of_range("Input error: index is out of range, less then start index.");
@@ -100,12 +100,10 @@ TVector<ValType> TVector<ValType>::operator*(const ValType &val) {
   return tmp;
 }
 
-// а если сложить векторы разно длинны?
+
 template <class ValType>
 TVector<ValType> TVector<ValType>::operator+(const TVector &v) {
   TVector<ValType> tmp(size, startIndex);
-  //if (size != v.size)
-    //throw logic_error("different sizes of vectors");
   int i;
   for (i = 0; i < size; ++i)
     tmp.pVector[i] = pVector[i] + v.pVector[i];

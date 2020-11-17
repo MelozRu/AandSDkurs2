@@ -6,7 +6,7 @@ template <class ValType>
 TMatrix<ValType>::TMatrix(int s) : TVector<TVector<ValType>>(s) {
   int i;
   for (i = 0; i < s; ++i)
-    (*this).pVector[i] = TVector<ValType>(s-i, i);  // работает
+    (*this).pVector[i] = TVector<ValType>(s-i, i); 
 }
 
 template <class ValType>
@@ -34,8 +34,6 @@ TMatrix<ValType>& TMatrix<ValType>::operator= (const TMatrix<ValType> &mt) {
   if (!(*this == mt)) {
     int i;
     if (!(this->size == mt.size)) {
-      //delete[] this->pVector[1];
-      //(*this).pVector = new TVector<ValType>(mt.size);
       (*this).size = mt.size;
       (*this).startIndex = mt.startIndex;
     }

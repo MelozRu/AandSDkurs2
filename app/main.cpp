@@ -1,4 +1,4 @@
-#define TES
+#define TEST
 #ifdef TEST
 #include <iostream>
 #include "TMatrix.h"
